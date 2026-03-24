@@ -43,21 +43,43 @@ ui <- page_sidebar(
       value = 95
     )
   ),
-  
-  card(
-    full_screen = TRUE,
-    card_header("Results"),
-    card_body(
-      h4('Estimate of Population Proportion'),
-      reactableOutput('table_1'),
-      br(),
-      h4('Confidence Interval'),
-      reactableOutput('table_2'),
-      br(),
-      h4('Confidence Interval Plot'),
-      plotOutput("ci_curve_plot", height = "400px")
+
+  layout_columns(
+    col_widths = c(6, 6, 12),
+    row_heights = c(1, 2),
+    card(
+      full_screen = TRUE,
+      card_header('Estimate of Population Proportion'),
+      reactableOutput('table_1')
+    ),
+    card(
+      full_screen = TRUE,
+      card_header('Confidence Interval'),
+      reactableOutput('table_2')
+    ),
+    card(
+      full_screen = TRUE,
+      card_header('Confidence Interval Plot'),
+      plotOutput('ci_curve_plot', height = '400px')
     )
   )
+  
+  # card(
+  #   full_screen = TRUE,
+  #   card_header("Results"),
+  #   card_body(
+  #     h4('Estimate of Population Proportion'),
+  #     reactableOutput('table_1'),
+  #     br(),
+  #     h4('Confidence Interval'),
+  #     reactableOutput('table_2'),
+  #     br(),
+  #     h4('Confidence Interval Plot'),
+  #     plotOutput("ci_curve_plot", height = "400px")
+  #   )
+  # )
+
+  
 )
 
 server <- function(input, output, session) {
