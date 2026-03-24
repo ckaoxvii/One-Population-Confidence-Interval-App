@@ -213,7 +213,7 @@ server <- function(input, output, session) {
       annotate(
         "text",
         x = mu,
-        y = y_peak * 1.175,
+        y = y_peak * 1.25,
         label = paste0(input$conf_level, "% Confidence Interval"),
         size = 5
       ) +
@@ -234,7 +234,7 @@ server <- function(input, output, session) {
       annotate(
         "text",
         x = lb,
-        y = -0.02 * y_peak,
+        y = 0.5 * y_peak,
         label = paste0("Lower\n", sprintf("%.4f", lb)),
         color = "#F04E2A",
         vjust = 1,
@@ -253,7 +253,7 @@ server <- function(input, output, session) {
       annotate(
         "text",
         x = ub,
-        y = -0.02 * y_peak,
+        y = 0.5 * y_peak,
         label = paste0("Upper\n", sprintf("%.4f", ub)),
         color = "#F04E2A",
         vjust = 1,
@@ -267,7 +267,7 @@ server <- function(input, output, session) {
       labs(
         x = "Population Proportion p"
       ) +
-      coord_cartesian(ylim = c(-0.08 * y_peak, 1.18 * y_peak)) +
+      coord_cartesian(ylim = c(-0.08 * y_peak, 1.5 * y_peak)) +
       theme_minimal(base_size = 13) +
       theme(
         panel.grid.minor = element_blank(),
