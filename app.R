@@ -4,7 +4,7 @@ library(reactable)
 library(tidyverse)
 
 ui <- page_sidebar(
-  title = "Confidence Interval Calculator for One Population",
+  title = "One-Proportion Confidence Interval Calculator",
   theme = bs_theme(
     primary = "#A90533",
     "navbar-bg" = "#A90533",
